@@ -1,0 +1,11 @@
+{
+  "name": "neon-wrapper",
+  "version": "1.0.0",
+  "description": "A react component which wraps plain text to make it neon",
+  "main": "main.jsx",
+  "keywords": [
+    "react"
+  ],
+  "author": "Yehuda Edelstein",
+  "license": "ISC"
+}

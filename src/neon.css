@@ -1,0 +1,58 @@
+.neon-text {
+  font-size: inherit; /* Inherit font size from parent */
+  font-family: inherit; /* Inherit font family from parent */
+  font-weight: inherit; /* Inherit font weight from parent */
+  letter-spacing: inherit; /* Inherit letter spacing from parent */
+  color: inherit; /* Inherit color from parent */
+  position: relative;
+  display: inline-block; /* Adjust based on content */
+  text-shadow: 0 0 calc(var(--glow-intensity) / 8) var(--neon-color),
+    0 0 calc(var(--glow-intensity) / 4) var(--neon-color),
+    0 0 calc(var(--glow-intensity) / 2) var(--neon-color),
+    0 0 var(--glow-intensity) var(--neon-color),
+    0 0 calc(var(--glow-intensity) * 1.5) var(--neon-color),
+    0 0 calc(var(--glow-intensity) * 2) var(--neon-color);
+}
+
+.neon-text.flicker {
+  animation: flicker 1s infinite alternate;
+}
+
+.neon-text:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 0 calc(var(--shadow-spread) / 8) var(--neon-color),
+    0 0 calc(var(--shadow-spread) / 4) var(--neon-color),
+    0 0 calc(var(--shadow-spread) / 2) var(--neon-color),
+    0 0 var(--shadow-spread) var(--neon-color),
+    0 0 calc(var(--shadow-spread) * 1.5) var(--neon-color),
+    0 0 calc(var(--shadow-spread) * 2) var(--neon-color);
+  z-index: -1; /* Ensure the glow is behind the text */
+  border-radius: 8px;
+  opacity: 0.6; /* Adjust the glow intensity */
+}
+
+@keyframes flicker {
+  0% {
+    opacity: 1;
+  }
+  20% {
+    opacity: 0.8;
+  }
+  40% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 0.4;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.6;
+  }
+}
