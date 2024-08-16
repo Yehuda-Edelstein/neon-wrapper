@@ -22,4 +22,4 @@ const Neon = ({
   );
 };
 
-export default Neon;
+export default { Neon };
